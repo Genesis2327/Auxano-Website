@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Demo | Auxano</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    /* 1. Background styling to match your brand */
+    body { 
+       margin: 0;
+       padding: 0;
+       background: linear-gradient(90deg, #ffffff, #e1e5f1, #72c9d1);
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .calendly-page-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .calendly-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif; /* Or your brand font */
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c4b72;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 2. The Widget Container - Essential for the 'Card' look */
+    #calendly-inline-widget {
+      width: 100%;
+      max-width: 1060px; /* Standard Calendly wide-view width */
+      height: 700px; /* Height needed to show the full calendar without double scrolling */
+      background-color: transparent;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Adds that floating professional look */
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      #calendly-inline-widget { height: 1000px; } /* Taller for mobile stacked view */
+      .calendly-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calendly-page-container">
+    <h1 class="calendly-title">See How Work Stays In Sync</h1>
+    
+    <div id="calendly-inline-widget"></div>
+  </div>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  
+  <script>
+    window.onload = function() {
+      Calendly.initInlineWidget({
+        url: 'https://calendly.com/it-interns-dgpcpa/30min',
+        parentElement: document.getElementById('calendly-inline-widget'),
+        prefill: {},
+        utm: {},
+        /* You can customize the widget colors here to match Auxano */
+        branding: true 
+      });
+    };
+  </script>
+
+</body>
+</html>
