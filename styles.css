@@ -398,6 +398,40 @@ img { max-width: 100%; height: auto; display: block; }
 
 
 /* How It Works */
+
+/* generic reveal animation */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* optional slide-from-left or right variants */
+.animate.slide-left { transform: translateX(-30px); }
+.animate.slide-right { transform: translateX(30px); }
+.animate.slide-left.in-view, .animate.slide-right.in-view {
+    transform: translateX(0);
+}
+
+/* fade-in only (no movement) */
+.animate.fade { transform: none; }
+.animate.fade.in-view { opacity:1; }
+
+/* hero-specific animation example */
+.hero-image img.animate {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 0;
+    transform: scale(0.95);
+}
+.hero-image img.animate.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .how-it-works {
     padding: 80px 0;
     background: var(--gradient);
