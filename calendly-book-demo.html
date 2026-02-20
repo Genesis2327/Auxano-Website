@@ -20,6 +20,8 @@
       flex-direction: column;
       align-items: center;
       padding: 40px 20px;
+      margin-top: 100px; /* Prevent overlap with header */
+      background: transparent;
     }
 
     .calendly-title {
@@ -38,9 +40,9 @@
       width: 100%;
       max-width: 1060px; /* Standard Calendly wide-view width */
       height: 700px; /* Height needed to show the full calendar without double scrolling */
-      background-color: transparent;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Adds that floating professional look */
+      background-color: linear-gradient(90deg, #ffffff, #e1e5f1, #72c9d1);
+      border-radius: 0;
+      box-shadow: none;
       overflow: hidden;
     }
 
@@ -52,9 +54,29 @@
 </head>
 <body>
 
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">
+        <img src="Assets/logo/logo.png" alt="Auxano HR & Payroll" class="logo-icon no-animate">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#schedule-meeting" class="btn-nav">Book a Demo</a></li>
+        <li><a href="https://app.auxano.services/" class="btn-nav">Access Portal</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
   <div class="calendly-page-container">
     <h1 class="calendly-title">See How Work Stays In Sync</h1>
-    
     <div id="calendly-inline-widget"></div>
   </div>
 
@@ -72,6 +94,41 @@
       });
     };
   </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content container">
+        <div class="footer-col">
+          <img src="Assets/logo/auxano_logo.png" alt="Auxano" class="footer-logo">
+          <p>Smart workforce and payroll management for modern teams.</p>
+        </div>
+        <div class="footer-col footer-contacts">
+          <h4>CONTACTS</h4>
+          <p><img src="Assets/images/mail.png" alt="Email" class="footer-icon">auxano.devteam@email.com</p>
+          <p><img src="Assets/images/phone.png" alt="Phone" class="footer-icon">099 - 2345 - 079</p>
+          <p><img src="Assets/images/web.png" alt="Web" class="footer-icon">auxano.ph.com</p>
+        </div>
+        <div class="footer-col footer-links">
+          <h4>QUICK LINKS</h4>
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#schedule-meeting">Book a Demo</a>
+        </div>
+        <div class="footer-col footer-social">
+          <h4>FOLLOW US</h4>
+          <div class="social-icons">
+            <a href="#"><img src="Assets/images/facebook.png" alt="Facebook" class="footer-icon"></a>
+            <a href="#"><img src="Assets/images/in.png" alt="LinkedIn" class="footer-icon"></a>
+            <a href="#"><img src="Assets/images/x.png" alt="X" class="footer-icon"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Auxano. All rights reserved.</p>
+      </div>
+    </footer>
 
 </body>
 </html>
